@@ -16,7 +16,7 @@ public class Main {
                 How to play:
                 1. chose how many mines you want on the field
                 2. Choose a cell by specifying its coordinates and whether you believe it's a free space or a mine.
-                   example: 3 3 free ----- (height)(length)(free/mine)
+                   example: 3 3 free ----- (x)(y)(free/mine)
                 3. what each symbol represents:
                     . as unexplored cells
                     / as explored free cells without mines around it
@@ -45,8 +45,9 @@ public class Main {
             }
             // getting user input
             System.out.print("Set/unset mines marks or claim a cell as free: ");
-            int col = scanner.nextInt() - 1;
+
             int row = scanner.nextInt() - 1;
+            int col = scanner.nextInt() - 1;
             String input = scanner.next();
             // checking user input
             while (col > 8 || row > 8){
@@ -95,7 +96,7 @@ public class Main {
             }
         }
     }
-    
+
     // ---- randomly fill array like user wants
     public static void fillArr(String[][] arr, int n){
         // fill arr with dots
